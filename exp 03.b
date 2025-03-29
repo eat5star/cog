@@ -24,7 +24,7 @@ def extract_entities(text):
         print(entity)
         print("Token Count:", len(tokens))
         return named_entities
-if _name_ == "_main_":
+if __name__ == "__main__":
     text = "John Smith works at Google in New York."
     print("Original Text:", text)
     extract_entities(text)
