@@ -21,7 +21,7 @@ def summarize_text(text):
     summary = " ".join(sentences[:2])
     print("Summary (First 2 Sentences):", summary)
     return summary
-if _name_ == "_main_":
+if __name__ == "__main__":
     text = """Natural Language Processing is an exciting field. It helps machines
     understand human language. NLP is widely used in AI applications. Many researchers
     contribute to its development."""
