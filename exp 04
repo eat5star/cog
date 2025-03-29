@@ -1,8 +1,7 @@
-Exp 4 Pattern recognition
 import re
 
 class TextPatternRecognizer:
-    def _init_(self, text):
+    def __init__(self, text):  
         self.text = text
 
     def find_emails(self):
@@ -20,7 +19,6 @@ class TextPatternRecognizer:
         date_pattern = r"\b\d{1,2}[-/]\d{1,2}[-/]\d{4}\b"
         return re.findall(date_pattern, self.text)
 
-# Example usage
 if __name__ == "__main__":
     sample_text = """
     Contact me at john.doe@example.com or support@company.org.
