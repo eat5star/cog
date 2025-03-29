@@ -1,0 +1,22 @@
+# /Exp 3
+
+# 3 a Sentiment Analysis Using Structured NLP Programs :
+!pip install nltk textblob
+import nltk
+from nltk.tokenize import word_tokenize
+from textblob import TextBlob
+
+nltk.download('punkt_tab')
+def analyze_sentiment(text):
+    tokens = word_tokenize(text)
+    print("Tokenized:", tokens)
+    blob = TextBlob(text)
+    polarity = blob.sentiment.polarity
+    sentiment = "Positive" if polarity > 0 else "Negative" if polarity < 0 else "Neutral"
+    print(f"Sentiment: {sentiment} (Polarity: {polarity})")
+    print("Token Count:", len(tokens))
+    return sentiment
+if _name_ == "_main_":
+    text = "I love this amazing product, it’s fantastic and wonderful!"
+    print("Original Text:", text)
+    analyze_sentiment(text)
