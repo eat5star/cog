@@ -20,7 +20,7 @@ def tag_pos(text):
         pos_counts[pos] = pos_counts.get(pos, 0) + 1
     print("POS Tag Frequencies:", pos_counts)
     return tagged
-if _name_ == "_main_":
+if __name__ == "__main__":
     text = "The quick brown fox jumps over the lazy dog."
     print("Original Text:", text)
     tag_pos(text)
