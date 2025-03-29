@@ -1,0 +1,21 @@
+# Exp 1 NLTK Tutorial
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('punkt_tab')
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
+
+text = "Natural Language Processing is an exciting field of Artificial Intelligence."
+tokens = word_tokenize(text)
+stop_words = set(stopwords.words("english"))
+filtered_words = [word for word in tokens if word.lower() not in stop_words]
+
+stemmer = PorterStemmer()
+stemmed_words = [stemmer.stem(word) for word in filtered_words]
+
+print("Original Text:", text)
+print("Tokenized Words:", tokens)
+print("Filtered Words:", filtered_words)
+print("Stemmed Words:", stemmed_words)
