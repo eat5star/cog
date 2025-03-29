@@ -1,12 +1,12 @@
-# /Exp 3
+# Exp 3
 
-# 3 a Sentiment Analysis Using Structured NLP Programs :
 !pip install nltk textblob
 import nltk
 from nltk.tokenize import word_tokenize
 from textblob import TextBlob
 
-nltk.download('punkt_tab')
+nltk.download('punkt')  # Fixed the download name
+
 def analyze_sentiment(text):
     tokens = word_tokenize(text)
     print("Tokenized:", tokens)
@@ -16,7 +16,8 @@ def analyze_sentiment(text):
     print(f"Sentiment: {sentiment} (Polarity: {polarity})")
     print("Token Count:", len(tokens))
     return sentiment
-if _name_ == "_main_":
+
+if __name__ == "__main__":  
     text = "I love this amazing product, it’s fantastic and wonderful!"
     print("Original Text:", text)
     analyze_sentiment(text)
