@@ -1,0 +1,18 @@
+# Exp 2 word preprocessing using nlp
+
+import nltk
+nltk.download('punkt_tab')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+import string
+
+text = "The running athletes were exhausted after the marathon!"
+tokens = word_tokenize(text)
+lemmatizer = WordNetLemmatizer()
+filtered_tokens = [lemmatizer.lemmatize(word.lower()) for word in tokens if
+word.lower() not in stopwords.words('english') and word not in string.punctuation]
+
+print("Lemmatized Words:", filtered_tokens)
